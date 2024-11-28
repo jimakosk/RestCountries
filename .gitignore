@@ -1,20 +1,15 @@
-﻿# Ignore build directories
-bin/
+﻿bin/
 obj/
 
-# Ignore NuGet packages
 *.nupkg
 *.snupkg
 
-# Ignore build logs
 *.log
 
-# Ignore compiled files
 *.dll
 *.exe
 *.pdb
 
-# Ignore VS and Rider files
 .vs/
 .idea/
 
