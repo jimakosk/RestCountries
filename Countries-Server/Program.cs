@@ -1,6 +1,7 @@
 using Countries_Server.Data;
 using Countries_Server.Jobs;
 using Countries_Server.Services;
+using Countries_Server.Services.Interfaces;
 using Hangfire;
 using Hangfire.SqlServer;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<ICountryService, CountryService>();
-builder.Services.AddScoped<JobSchedulerService>();
+builder.Services.AddScoped<IJobSchedulerService, JobSchedulerService>();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<CountryJob>();

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jkon2\\OneDrive\\Υπολογιστής\\Countries-Server\\Countries-Server\\CountryTestChallenge\\CountryTestChallenge.csproj": {}
+    "C:\\Users\\jkon2\\OneDrive\\Countries-Server\\Countries-Server\\CountryTestChallenge\\CountryTestChallenge.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jkon2\\OneDrive\\Υπολογιστής\\Countries-Server\\Countries-Server\\Countries-Server\\Countries-Server.csproj": {
+    "C:\\Users\\jkon2\\OneDrive\\Countries-Server\\Countries-Server\\Countries-Server\\Countries-Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jkon2\\OneDrive\\Υπολογιστής\\Countries-Server\\Countries-Server\\Countries-Server\\Countries-Server.csproj",
+        "projectUniqueName": "C:\\Users\\jkon2\\OneDrive\\Countries-Server\\Countries-Server\\Countries-Server\\Countries-Server.csproj",
         "projectName": "Countries-Server",
-        "projectPath": "C:\\Users\\jkon2\\OneDrive\\Υπολογιστής\\Countries-Server\\Countries-Server\\Countries-Server\\Countries-Server.csproj",
+        "projectPath": "C:\\Users\\jkon2\\OneDrive\\Countries-Server\\Countries-Server\\Countries-Server\\Countries-Server.csproj",
         "packagesPath": "C:\\Users\\jkon2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jkon2\\OneDrive\\Υπολογιστής\\Countries-Server\\Countries-Server\\Countries-Server\\obj\\",
+        "outputPath": "C:\\Users\\jkon2\\OneDrive\\Countries-Server\\Countries-Server\\Countries-Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jkon2\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -98,14 +98,14 @@
         }
       }
     },
-    "C:\\Users\\jkon2\\OneDrive\\Υπολογιστής\\Countries-Server\\Countries-Server\\CountryTestChallenge\\CountryTestChallenge.csproj": {
+    "C:\\Users\\jkon2\\OneDrive\\Countries-Server\\Countries-Server\\CountryTestChallenge\\CountryTestChallenge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jkon2\\OneDrive\\Υπολογιστής\\Countries-Server\\Countries-Server\\CountryTestChallenge\\CountryTestChallenge.csproj",
+        "projectUniqueName": "C:\\Users\\jkon2\\OneDrive\\Countries-Server\\Countries-Server\\CountryTestChallenge\\CountryTestChallenge.csproj",
         "projectName": "CountryTestChallenge",
-        "projectPath": "C:\\Users\\jkon2\\OneDrive\\Υπολογιστής\\Countries-Server\\Countries-Server\\CountryTestChallenge\\CountryTestChallenge.csproj",
+        "projectPath": "C:\\Users\\jkon2\\OneDrive\\Countries-Server\\Countries-Server\\CountryTestChallenge\\CountryTestChallenge.csproj",
         "packagesPath": "C:\\Users\\jkon2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jkon2\\OneDrive\\Υπολογιστής\\Countries-Server\\Countries-Server\\CountryTestChallenge\\obj\\",
+        "outputPath": "C:\\Users\\jkon2\\OneDrive\\Countries-Server\\Countries-Server\\CountryTestChallenge\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jkon2\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -122,8 +122,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jkon2\\OneDrive\\Υπολογιστής\\Countries-Server\\Countries-Server\\Countries-Server\\Countries-Server.csproj": {
-                "projectPath": "C:\\Users\\jkon2\\OneDrive\\Υπολογιστής\\Countries-Server\\Countries-Server\\Countries-Server\\Countries-Server.csproj"
+              "C:\\Users\\jkon2\\OneDrive\\Countries-Server\\Countries-Server\\Countries-Server\\Countries-Server.csproj": {
+                "projectPath": "C:\\Users\\jkon2\\OneDrive\\Countries-Server\\Countries-Server\\Countries-Server\\Countries-Server.csproj"
               }
             }
           }

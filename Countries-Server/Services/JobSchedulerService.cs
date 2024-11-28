@@ -1,9 +1,10 @@
 ﻿using Countries_Server.Jobs;
+using Countries_Server.Services.Interfaces;
 using Hangfire;
 
 namespace Countries_Server.Services
 {
-    public class JobSchedulerService
+    public class JobSchedulerService : IJobSchedulerService
     {
         private readonly IRecurringJobManager _recurringJobManager;
         private readonly IConfiguration _configuration;
@@ -27,6 +28,8 @@ namespace Countries_Server.Services
             else
                 _recurringJobManager.RemoveIfExists("FetchAndSaveCountries");
         }
+
+     
     }
 
 }

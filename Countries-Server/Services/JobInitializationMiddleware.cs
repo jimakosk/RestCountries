@@ -1,4 +1,6 @@
-﻿namespace Countries_Server.Services
+﻿using Countries_Server.Services.Interfaces;
+
+namespace Countries_Server.Services
 {
     public class JobInitializationMiddleware
     {
@@ -9,7 +11,7 @@
             _next = next;
         }
 
-        public async Task InvokeAsync(HttpContext context, JobSchedulerService jobSchedulerService)
+        public async Task InvokeAsync(HttpContext context, IJobSchedulerService jobSchedulerService)
         {
             jobSchedulerService.ScheduleJobs();
 
