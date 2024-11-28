@@ -54,7 +54,7 @@ namespace CountryTestChallenge
 
             var statusCodeResult = Assert.IsType<ObjectResult>(result);
             Assert.Equal(500, statusCodeResult.StatusCode);
-            Assert.Contains("No countries were found", statusCodeResult.Value.ToString());
+            Assert.Contains("No countries were found", statusCodeResult?.Value?.ToString());
         }
 
         [Fact]

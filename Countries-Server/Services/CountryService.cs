@@ -29,9 +29,9 @@ namespace Countries_Server.Services
 
             try
             {
-                if (_memoryCache.TryGetValue(CacheKey, out List<Country> value))
+                if (_memoryCache.TryGetValue(CacheKey, out List<Country>? value))
                 {
-                    return value;
+                    return value ?? Enumerable.Empty<Country>();
                 }
 
                 using (var context = new AppDbContextFactory().CreateDbContext(_connectionString))
