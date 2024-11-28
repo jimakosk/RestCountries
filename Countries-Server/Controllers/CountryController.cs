@@ -32,15 +32,15 @@ namespace Countries_Server.Controllers
                 var result = await countryService.GetCountriesAsync();
                 if (result.IsNullOrEmpty())
                 {
-                    return StatusCode(500, "");
+                    return StatusCode(500, "No countries were found in the database or API.");
 
                 }
                 return Ok(result);
             }
             catch (Exception ex)
             {
-                _logger.LogError("");
-                return StatusCode(500, "");
+                _logger.LogError($"An error occurred while retrieving countries.{ex}");
+                return StatusCode(500, "An error occurred while retrieving countries.");
 
             }
         }
