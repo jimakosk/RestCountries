@@ -19,13 +19,13 @@ namespace Countries_Server.Services
         {
             if (_configuration.GetValue<bool>("Hangfire:IsEnabled"))
             {
-               
+
                 _recurringJobManager.AddOrUpdate<CountryJob>(
                 "FetchAndSaveCountries",
                 job => job.FetchAndSaveCountriesAsync(),
-               _configuration.GetValue<string>("Hangfire:Minutes")
-                 BackgroundJob.Enqueue<CountryJob>(job => job.FetchAndSaveCountriesAsync());
-            );
+               _configuration.GetValue<string>("Hangfire:Minutes"));
+                // BackgroundJob.Enqueue<CountryJob>(job => job.FetchAndSaveCountriesAsync());
+            
             }
             else
                 _recurringJobManager.RemoveIfExists("FetchAndSaveCountries");

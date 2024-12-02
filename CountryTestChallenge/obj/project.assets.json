@@ -2906,7 +2906,6 @@
           "Hangfire": "1.8.16",
           "Hangfire.AspNetCore": "1.8.16",
           "Hangfire.SqlServer": "1.8.16",
-          "Microsoft.EntityFrameworkCore": "8.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.11",
           "RestSharp": "112.1.0",
           "Swashbuckle.AspNetCore": "7.1.0"
