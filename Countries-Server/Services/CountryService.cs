@@ -57,6 +57,7 @@ namespace Countries_Server.Services
              var client = new RestClient("https://restcountries.com/v3.1/all");
             var request = new RestRequest();
             RestResponse response = client.Execute(request);
+            response.EnsureSuccessStatusCode();
             if (response.IsSuccessStatusCode)
             {
                 var countriesData = JsonConvert.DeserializeObject <List<CountryResponse>>( response.Content);
