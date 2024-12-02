@@ -42,15 +42,15 @@
           "dependencies": {
             "Hangfire": {
               "target": "Package",
-              "version": "[1.8.15, )"
+              "version": "[1.8.16, )"
             },
             "Hangfire.AspNetCore": {
               "target": "Package",
-              "version": "[1.8.15, )"
+              "version": "[1.8.16, )"
             },
             "Hangfire.SqlServer": {
               "target": "Package",
-              "version": "[1.8.15, )"
+              "version": "[1.8.16, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -72,7 +72,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[7.1.0, )"
             }
           },
           "imports": [
