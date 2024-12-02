@@ -24,7 +24,7 @@ namespace Countries_Server.Services
                 "FetchAndSaveCountries",
                 job => job.FetchAndSaveCountriesAsync(),
                _configuration.GetValue<string>("Hangfire:Minutes")
-
+                 BackgroundJob.Enqueue<CountryJob>(job => job.FetchAndSaveCountriesAsync());
             );
             }
             else
