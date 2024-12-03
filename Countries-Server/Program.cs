@@ -15,6 +15,7 @@ builder.Services.AddScoped<IJobSchedulerService, JobSchedulerService>();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<CountryJob>();
+//builder.Services.AddCors(options => options.AddDefaultPolicy(builder => builder.AllowAnyOrigin().AllowAnyHeader()));
 builder.Services.AddHttpClient();
 builder.Services.AddHangfire(config =>
 {
