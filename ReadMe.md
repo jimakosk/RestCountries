@@ -1,3 +1,4 @@
+
 # Countries Service with Hangfire  
 
 Get real-time information about countries via a RESTful API integrated with Hangfire for efficient background task processing.  
@@ -79,3 +80,54 @@ By offloading this logic to Hangfire, the main application is free to handle use
 --- 
 
 This approach ensures that the **Countries Service** is highly efficient, scalable, and user-friendly, meeting the demands of real-time country information retrieval.  
+
+## Get Second Largest Number
+
+This endpoint retrieves the second largest unique integer from an array provided in the request body.
+
+### Endpoint
+
+**HTTP Method**: `POST`  
+**URL**: `/second-largest`  
+
+### Request
+
+**Body**:  
+A JSON object with the following structure:
+```json
+{
+    "RequestArrayObj": [1, 2, 3, 4]
+}
+```
+
+- **RequestArrayObj**: An array of integers with at least two elements.
+
+### Response
+
+- **Success (200 OK)**:  
+  Returns the second largest unique integer from the array.
+
+  Example:  
+  Input: `[1, 2, 3, 4]`  
+  Output: `3`  
+
+- **Error (400 Bad Request)**:  
+  - If the array has fewer than two elements:  
+    `"Array must have at least two integers."`  
+  - If the array does not have at least two unique integers:  
+    `"Array must have at least two unique integers."`  
+
+### Example Workflow
+
+1. **Request**:  
+   `POST /second-largest`  
+   Body:  
+   ```json
+   {
+       "RequestArrayObj": [7, 7, 3, 10]
+   }
+   ```
+
+2. **Response**:  
+   Status: `200 OK`  
+   Body: `7`
