@@ -1,8 +1,8 @@
- #   Project Documentation: Countries Service with Hangfire
+ # Countries Service with Hangfire
+ #   Get information about countries via a RESTful API https://restcountries.eu
 
-
-#    Overview
-#    The GetCountries endpoint retrieves a list of countries. The data is fetched either from the cache, the database, or an external API if the first two sources are unavailable.
+ #    Overview
+ #    The GetCountries endpoint retrieves a list of countries. The data is fetched either from the cache, the database, or an external API if the first two sources are unavailable.
 
  #   Steps
  #   Call the API Endpoint
@@ -13,7 +13,7 @@
 
  #   Success (200 OK): Returns a list of countries.
  #   Error (500 Internal Server Error): Returns an error message if the service fails.
-#    Hangfire is a library for background job processing in .NET applications. It allows you to run tasks at specified intervals or as one-time jobs without blocking the main application thread.
+ #    Hangfire is a library for background job processing in .NET applications. It allows you to run tasks at specified intervals or as one-time jobs without blocking the main application thread.
 
  
  
@@ -21,7 +21,7 @@
 
 
 
-# The country-fetching logic in the CountryService can run on a recurring basis (e.g., every 30 minutes) to ensure the database and cache always have up-to-date country information.
+# The country-fetching logic in the CountryService can run on a recurring basis (e.g. every 30 minutes) to ensure the database and cache always have up-to-date country information.
 # Without Hangfire, you would need to manually trigger this process, which could lead to stale data or operational bottlenecks.
 
 # Fetching data from an external API or performing database updates can take time. Using Hangfire offloads these tasks to a background worker, so the main application remains responsive.
