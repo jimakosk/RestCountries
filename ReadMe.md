@@ -1,5 +1,5 @@
  # Countries Service with Hangfire
- #   Get information about countries via a RESTful API https://restcountries.eu
+ Get information about countries via a RESTful API https://restcountries.eu
 
  #    Overview
  #    The GetCountries endpoint retrieves a list of countries. The data is fetched either from the cache, the database, or an external API if the first two sources are unavailable.
