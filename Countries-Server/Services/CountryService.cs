@@ -26,14 +26,12 @@ namespace Countries_Server.Services
 
         public async Task<IEnumerable<Country>> GetCountriesAsync()
         {
-
             try
             {
                 if (_memoryCache.TryGetValue(CacheKey, out List<Country>? value))
                 {
                     return value ?? Enumerable.Empty<Country>();
                 }
-
                 using (var context = new AppDbContextFactory().CreateDbContext(_connectionString))
                 {
                     var countries = await context.Countries.ToListAsync();
