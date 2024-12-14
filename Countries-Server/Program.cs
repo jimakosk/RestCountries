@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers();
+builder.Services.AddScoped<IApiService, ApiService>();
 builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<IJobSchedulerService, JobSchedulerService>();
 builder.Services.AddDbContext<AppDbContext>(options =>

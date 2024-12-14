@@ -1,5 +1,6 @@
 ﻿using Countries_Server.Data;
 using Countries_Server.Models;
+using Countries_Server.Services.Interfaces;
 using Countries_Server.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
@@ -15,13 +16,15 @@ namespace Countries_Server.Services
         private const string CacheKey = "CountriesCache";
         private readonly string _connectionString;
         private readonly IMemoryCache _memoryCache;
+        private readonly IApiService _apiService;
         private readonly ILogger<CountryService> _logger;
 
-        public CountryService(ILogger<CountryService> logger,IConfiguration configuration,IMemoryCache memoryCache)
+        public CountryService(ILogger<CountryService> logger, IConfiguration configuration, IMemoryCache memoryCache, IApiService apiService)
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
             _logger = logger;
             _memoryCache = memoryCache;
+            _apiService = apiService;
         }
 
         public async Task<IEnumerable<Country>> GetCountriesAsync()
@@ -52,24 +55,14 @@ namespace Countries_Server.Services
 
         public async Task<IEnumerable<Country>> FetchAndSaveCountriesAsync()
         {
-             var client = new RestClient("https://restcountries.com/v3.1/all");
-            var request = new RestRequest();
-            RestResponse response = client.Execute(request);
-            
-            if (response.IsSuccessStatusCode)
+            var result = await _apiService.FetcheCountriesFromAsync();
+            if (result.Any())
             {
-                var countriesData = JsonConvert.DeserializeObject <List<CountryResponse>>( response.Content);
-                var result = countriesData.Select(country => new Country
-                {
-                    CommonName = country.Name.Common,
-                    Capital = country.Capital?.FirstOrDefault()?? "No Capital",
-                    Borders = string.Join(", ", country.Borders ?? new List<string>())
-                }).ToList();
-                await  SaveCountriesToDatabaseAsync(result);
+                await SaveCountriesToDatabaseAsync(result);
                 _memoryCache.Set(CacheKey, result, TimeSpan.FromMinutes(30));
-                return result;
             }
-            return Enumerable.Empty<Country>();
+            return result;
+
         }
 
         public async Task SaveCountriesToDatabaseAsync(IEnumerable<Country> countries)
