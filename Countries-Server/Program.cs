@@ -10,9 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers();
-builder.Services.AddScoped<IApiService, ApiService>();
-builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<IJobSchedulerService, JobSchedulerService>();
+builder.Services.AddScoped<ICountryService, CountryService>();
+builder.Services.AddScoped<IApiService, ApiService>();
+builder.Services.AddScoped<ICountryRepository, CountryRepository>();
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<CountryJob>();
